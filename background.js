@@ -9,7 +9,7 @@ chrome.runtime.onInstalled.addListener(function() {
             conditions: [
                 new chrome.declarativeContent.PageStateMatcher({
                 	// A url da página conter:
-                    pageUrl: { urlContains: 'scholar.google.com.br' },
+                    pageUrl: { urlContains: 'scholar.google.com.br/scholar'}
                 }) ],
 			// Nesse caso, mostramos a Page Action da extensão:
             actions: [ new chrome.declarativeContent.ShowPageAction() ]

@@ -1,7 +1,7 @@
 Plugin  Chrome BibTex
 =========================
 
->Pluguin para realizar download automatico de referências em BibTex do Google Acadêmico
+>Plugin para realizar download automático de referências em BibTex do Google Acadêmico.
 
 * Usa: saverFile.js 
 * Desenvolvido com: Jquery e Ajax (js e PHP)
@@ -15,7 +15,7 @@ Plugin  Chrome BibTex
 #### modo 1
 
 1. Para instalar o plugin, vá em "Configurações/Extensões" no Chrome.
-2. Arraste o arquivo *Plugin-BibTex.crx* para a aba de Extensões aberta no Chrome
+2. Arraste o arquivo *PluginChromeBibTex.crx* para a aba de Extensões aberta no Chrome
 3. Confirme a instalação.
 4. Pronto! Você já instalou
 
