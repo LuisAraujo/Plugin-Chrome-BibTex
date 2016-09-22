@@ -1,16 +1,19 @@
 currentContents = "";
 elements = 0;
-
-
-$(document).ready(function() {
-	//alert('Bem-vindo ao Publig Chrome BibText');
-    //htmlParse();
-});
-
+abortar = false;
+/*
 $(document).on( "keydown", function( event ) {
      if(event.which == 66)
-         htmlParse();
+
 });
+*/
+$(document).ready(function(){
+    $("#gs_hdr_tsb").after("<button type='button' id='getbibtex' name='btnGB' aria-label='Get BibTex' class='gs_btnG gs_in_ib gs_btn_act gs_btn_eml'>Get BibTex</button>");
+
+    $(document).on('click', '#getbibtex', function(){
+        htmlParse();
+    });
+})
 
 function setElements(sinal){
     if(sinal == "+"){
@@ -34,7 +37,6 @@ function htmlParse(){
 		a = gs_fl.find("a");
 		
 		for(j=0; j < a.length; j++){
-
             if($(a[j]).html() == "Importe para o BibTeX"){
                 setElements("+");
 				getData( $(a[j]).attr("href") );
@@ -87,9 +89,6 @@ function getNextPage(){
 }
 function getData(link){
 
-    //setTimeout(function(){sucessGetData("aaa  ")}, 100);
-    //return;
-
     var dados;
     $.ajax({
         type: "POST",
@@ -98,11 +97,17 @@ function getData(link){
         data: dados,
         contentType: "charset=UTF-8",
         success:sucessGetData,
-        error: function(){}
+        error: errorGetData
     });
 }
-
+function errorGetData(param){
+    if(param.statusText == "error"){
+        abortar = true;
+        setElements("-");
+    }
+}
 function sucessGetData(param){
+
      if(param != null){
         currentContents+=(param);
         setElements("-");
@@ -111,6 +116,12 @@ function sucessGetData(param){
 
 
 function createFile(){
+
+    if(abortar){
+        alert("Erro ao obter os dados!");
+        return;
+    }
+
     qtd = parseInt(localStorage.getItem('qtdbibtext'));
     console.log("Quantidade: " + qtd);
 

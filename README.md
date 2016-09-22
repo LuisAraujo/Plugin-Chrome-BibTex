@@ -27,8 +27,17 @@ Plugin  Chrome BibTex
 
 ###  Usar
 
-1. A extensão só funciona na página de resultados do Google Acadêmico
-2. Após exibir os resultados o icone do plugin ficará colorido
-3. Pressione B para fazer o download dos BibTexs
+1. A extensão só funciona na página de resultados do *Google Acadêmico*.
+2. É preciso habilitar a opção "Mostrar links para importar citações para o BibTex", em Confiurações do *Google Acadêmico*.
+3. Observe que ao lado do botão de pesquisa há um novo botão "GetBibTex", click para gerar o arquivo.
+
+###  Erro
+
+1. Em caso de erro você deve verificar se o Google não bloqueou sua solicitação.
+2. Para isso, clique em "Importe para o BibTeX" de algum dos resultados e verifique se a referência é gerada.
+3. Possivelmente você será redirecionado para uma página de verificação como "captcha".
+4. Responda o captcha corretamente e o acesso será liberado.
+5. Volte ao *Google Acadêmico* e clique novamente em "GetBibTex".
+
 
 ![Tela Principal](https://github.com/LuisAraujo/PluginChromeBibTex/blob/master/icon128.png)
