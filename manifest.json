@@ -1,0 +1,46 @@
+{
+    // Obrigat�rio
+    "manifest_version": 2,
+    "name": "Chrome BibTex",
+    "version": "1.0",
+
+    // Descri��o da nossa extens�o
+    "description": "Baixe as referências BibTex de forma automática",
+
+    // �conea da nossa extens�o
+    "icons": {
+       "48": "icon48.png",
+       "128": "icon128.png"
+    },
+
+    // Utilizaremos as "Page Actions" e registramos isso aqui
+    "page_action": {
+        "default_icon": {
+            "19" : "icon19.png"
+        },
+        "default_title": "Chrome BibTex"
+    },
+
+    // Aqui declaramos as permiss�es que precisamos
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*",
+        "declarativeContent"
+    ],
+
+    // Utilizaremos uma "Event Page" (note o persistent: false)
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+
+    // Injetaremos esses arquivos quando "match" ocorrer
+    "content_scripts": [ {
+        "js": [ "inject/jquery.js", "inject/bibtex.js", "filesaver/FileSaver.js" ],
+        "css": [ "inject/bibtex.css" ],
+        "matches": [ "https://scholar.google.com.br/scholar*" ]
+    } ]
+
+
+}
