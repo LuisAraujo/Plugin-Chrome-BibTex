@@ -1,5 +1,8 @@
 Plugin  Chrome BibTex
 =========================
+
+![Main Screen](https://github.com/LuisAraujo/PluginChromeBibTex/blob/master/icon128.png)
+
 [eng]
 
 >Plugin to automatically download references in BibTex from Google Scholar.
@@ -40,7 +43,6 @@ Plugin  Chrome BibTex
 4. Answer the captcha correctly and access will be released.
 5. Go back to * Google Scholar * and click "GetBibTex" again.
 
-![Main Screen](https://github.com/LuisAraujo/PluginChromeBibTex/blob/master/icon128.png)
 
 [pt-Br]
 
